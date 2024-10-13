@@ -23,12 +23,12 @@ import frc.robot.Constants.SwerveConstants;
 public class TrajectoryCache {
     private FileLog log;
    
-    private static int trajectoryCount = 2;
+    private static int trajectoryCount = 3; 
     public TrajectoryFacing[] cache = new TrajectoryFacing[trajectoryCount];        // array of trajectories
 
     public enum TrajectoryType {
         test(0),
-        testCurve(1);
+        testCurve(1),
         // CenterBalanceBlue(2),
         // CenterBalanceRed(3),
         // LeaveCommunity(4),
@@ -39,7 +39,7 @@ public class TrajectoryCache {
         // RightOuterOneConeBalanceBlue(9),
         // RightOuterOneConeBalanceRed(10),
         // Pickup(11);
-
+        barrelRace(3);
         @SuppressWarnings({"MemberName", "PMD.SingularField"})
         public final int value;
         TrajectoryType(int value) { this.value = value; }
@@ -162,7 +162,16 @@ public class TrajectoryCache {
                 new Pose2d(3, 3, new Rotation2d(Math.toRadians(90.0)))
             )
         );     
-        
+        cache[TrajectoryType.barrelRace.value] = new TrajectoryFacing(
+            new Rotation2d(0.0), //Start facing +X direction
+            new Rotation2d(Math.PI),    //End facing -X direction
+            calcTrajectory("Barrel Race ", 0.4, 0.4,
+                new Pose2d(((5*12)/39.37)-(0.75)/2, ((7*12) + 6)/39.37, new Rotation2d(0)), //Starts at starting point minus half of robot's dimension, and at proper y-value, converted from feet/inches to meters
+                List.of(), //TODO: Plot middle points
+                new Pose2d(((5*12)/39.37) - 0.75, ((7*12)+6)/39.37, new Rotation2d(Math.PI)) //Ends further into starting zone at the same y-value, with final velocity vector matching the direction it should be moving in
+            )
+            );
+
         // cache[TrajectoryType.CenterBalanceBlue.value] = new TrajectoryFacing(
         //     new Rotation2d(Math.PI),            // Start facing driver station
         //     new Rotation2d(Math.PI),            // End facing driver station

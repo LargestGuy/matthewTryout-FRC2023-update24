@@ -179,9 +179,8 @@ public class TrajectoryCache {
                     new Translation2d(280/39.37, 90/39.37),
                     new Translation2d(200/39.37, 80/39.37),
                     new Translation2d(150/39.37, 100/39.37),
-                    new Translation2d(100/39.37, 80/39.37),
-                    new Translation2d(25/39.37, 75/39.37)
-                        ), //Middle points: HOPEFULLY far enough away from the barrel
+                    new Translation2d(100/39.37, 80/39.37)
+                        ), //Middle points
                 new Pose2d(25/39.37, 75/39.37, new Rotation2d(Math.PI)) //Ends at the center of the starting zone to account for error, velocity facing -X  
                 )
             );

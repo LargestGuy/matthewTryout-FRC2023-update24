@@ -29,6 +29,7 @@ public class TrajectoryCache {
     public enum TrajectoryType {
         test(0),
         testCurve(1),
+        barrelRace(2);
         // CenterBalanceBlue(2),
         // CenterBalanceRed(3),
         // LeaveCommunity(4),
@@ -39,7 +40,6 @@ public class TrajectoryCache {
         // RightOuterOneConeBalanceBlue(9),
         // RightOuterOneConeBalanceRed(10),
         // Pickup(11);
-        barrelRace(3);
         @SuppressWarnings({"MemberName", "PMD.SingularField"})
         public final int value;
         TrajectoryType(int value) { this.value = value; }
@@ -165,11 +165,25 @@ public class TrajectoryCache {
         cache[TrajectoryType.barrelRace.value] = new TrajectoryFacing(
             new Rotation2d(0.0), //Start facing +X direction
             new Rotation2d(Math.PI),    //End facing -X direction
-            calcTrajectory("Barrel Race ", 0.4, 0.4,
-                new Pose2d(((5*12)/39.37)-(0.75)/2, ((7*12) + 6)/39.37, new Rotation2d(0)), //Starts at starting point minus half of robot's dimension, and at proper y-value, converted from feet/inches to meters
-                List.of(), //TODO: Plot middle points
-                new Pose2d(((5*12)/39.37) - 0.75, ((7*12)+6)/39.37, new Rotation2d(Math.PI)) //Ends further into starting zone at the same y-value, with final velocity vector matching the direction it should be moving in
-            )
+            calcTrajectory("Barrel Race", 0.4, 0.4,
+                new Pose2d(((5*12-17)/39.37), (((7*12) + 6)/39.37), new Rotation2d(0)), //Starts at starting point minus half of robot's dimension, and at proper y-value, converted from feet/inches to meters
+                List.of(
+                    new Translation2d(200/39.37, 85/39.37),
+                    new Translation2d(180/39.37, 20/39.37),
+                    new Translation2d(100/39.37, 30/39.37),
+                    new Translation2d(110/39.37, 120/39.37),
+                    new Translation2d(230/39.37, 70/39.37),
+                    new Translation2d(300/39.37, 100/39.37),
+                    new Translation2d(350/39.37, 30/39.37),
+                    new Translation2d(350/39.37, 100/39.37),
+                    new Translation2d(280/39.37, 90/39.37),
+                    new Translation2d(200/39.37, 80/39.37),
+                    new Translation2d(150/39.37, 100/39.37),
+                    new Translation2d(100/39.37, 80/39.37),
+                    new Translation2d(25/39.37, 75/39.37)
+                        ), //Middle points: HOPEFULLY far enough away from the barrel
+                new Pose2d(25/39.37, 75/39.37, new Rotation2d(Math.PI)) //Ends at the center of the starting zone to account for error, velocity facing -X  
+                )
             );
 
         // cache[TrajectoryType.CenterBalanceBlue.value] = new TrajectoryFacing(

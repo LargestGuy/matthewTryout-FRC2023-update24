@@ -166,22 +166,26 @@ public class TrajectoryCache {
             new Rotation2d(0.0), //Start facing +X direction
             new Rotation2d(Math.PI),    //End facing -X direction
             calcTrajectory("Barrel Race", 0.4, 0.4,
-                new Pose2d(((5*12-17)/39.37), (((7*12) + 6)/39.37), new Rotation2d(0)), //Starts at starting point minus half of robot's dimension, and at proper y-value, converted from feet/inches to meters
+                new Pose2d(45/39.37, 90/39.37, new Rotation2d(0)), //Starts at starting point minus half of robot's dimension, and at proper y-value, converted from feet/inches to meters
                 List.of(
-                    new Translation2d(200/39.37, 85/39.37),
-                    new Translation2d(180/39.37, 20/39.37),
-                    new Translation2d(100/39.37, 30/39.37),
-                    new Translation2d(110/39.37, 120/39.37),
-                    new Translation2d(230/39.37, 70/39.37),
-                    new Translation2d(300/39.37, 100/39.37),
-                    new Translation2d(350/39.37, 30/39.37),
-                    new Translation2d(350/39.37, 100/39.37),
-                    new Translation2d(280/39.37, 90/39.37),
-                    new Translation2d(200/39.37, 80/39.37),
-                    new Translation2d(150/39.37, 100/39.37),
-                    new Translation2d(100/39.37, 80/39.37)
+                    new Translation2d(150/39.37, 110/39.37), 
+                    new Translation2d(200/39.37, 60/39.37),
+                    new Translation2d(150/39.37, 30/39.37),
+                    new Translation2d(90/39.37, 60/39.37),
+                    new Translation2d(150/39.37, 110/39.37),
+                    new Translation2d(240/39.37, 75/39.37),
+                    new Translation2d(270/39.37, 90/39.37),
+                    new Translation2d(280/39.37, 120/39.37),
+                    new Translation2d(240/39.37, 152/39.37),
+                    new Translation2d(205/39.37, 120/39.37),
+                    new Translation2d(240/39.37, 75/39.37),
+                    new Translation2d(300/39.37, 28/39.37),
+                    new Translation2d(335/39.37, 60/39.37),
+                    new Translation2d(300/39.37, 95/39.37),
+                    new Translation2d(240/39.37, 75/39.37),
+                    new Translation2d(150/39.37, 100/39.37)
                         ), //Middle points: HOPEFULLY far enough away from the barrel
-                new Pose2d(25/39.37, 75/39.37, new Rotation2d(Math.PI)) //Ends at the center of the starting zone to account for error, velocity facing -X  
+                new Pose2d(30/39.37, 90/39.37, new Rotation2d(Math.PI)) //Ends at the center of the starting zone to account for error, velocity facing -X  
                 )
             );
 

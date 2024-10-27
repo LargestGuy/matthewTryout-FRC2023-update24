@@ -180,7 +180,7 @@ public class TrajectoryCache {
                     new Translation2d(205/39.37, 120/39.37),
                     new Translation2d(240/39.37, 75/39.37),
                     new Translation2d(300/39.37, 28/39.37),
-                    new Translation2d(335/39.37, 60/39.37),
+                    new Translation2d(331/39.37, 60/39.37),
                     new Translation2d(300/39.37, 95/39.37),
                     new Translation2d(240/39.37, 75/39.37),
                     new Translation2d(150/39.37, 100/39.37)

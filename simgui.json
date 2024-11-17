@@ -16,6 +16,7 @@
       "/SmartDashboard/Drive To Pose": "Command",
       "/SmartDashboard/Drive To Pose Test": "Command",
       "/SmartDashboard/Drive Trajectory Absolute": "Command",
+      "/SmartDashboard/Drive Trajectory Barrel": "Command",
       "/SmartDashboard/Drive Trajectory Curve Relative": "Command",
       "/SmartDashboard/Drive Trajectory Relative": "Command",
       "/SmartDashboard/Drive Trajectory S-Fwd Relative": "Command",
